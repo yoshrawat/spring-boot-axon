@@ -13,9 +13,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.yogesh</groupId>
-    <artifactId>spring-boot-project</artifactId>
+    <artifactId>spring-boot-axon</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>spring-boot-project</name>
+    <name>spring-boot-axon</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
