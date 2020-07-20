@@ -4,7 +4,8 @@ import lombok.*;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 @Data
+@RequiredArgsConstructor
 public class ShipOrderCommand {
     @TargetAggregateIdentifier
-    private String orderId;
+    private final String orderId;
 }
