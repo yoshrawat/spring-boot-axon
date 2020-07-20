@@ -3,7 +3,6 @@ package com.yogesh.axon.coreapi.queries;
 import lombok.*;
 
 @Data
-@AllArgsConstructor
 @RequiredArgsConstructor
 public class OrderedProduct {
     private final String orderId;

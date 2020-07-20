@@ -1,12 +1,12 @@
 package com.yogesh.axon.coreapi.commands;
 
-import lombok.Builder;
 import lombok.Data;
+import lombok.RequiredArgsConstructor;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 @Data
-@Builder
+@RequiredArgsConstructor
 public class ConfirmOrderCommand {
     @TargetAggregateIdentifier
-    private String orderId;
+    private final String orderId;
 }

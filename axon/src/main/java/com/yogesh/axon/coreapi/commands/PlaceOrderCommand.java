@@ -4,9 +4,9 @@ import lombok.*;
 import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
 @Data
-@Builder
+@RequiredArgsConstructor
 public class PlaceOrderCommand {
     @TargetAggregateIdentifier
-    private String orderId;
-    private String product;
+    private final String orderId;
+    private final String product;
 }
