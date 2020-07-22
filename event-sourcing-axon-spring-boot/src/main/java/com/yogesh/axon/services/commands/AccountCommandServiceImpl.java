@@ -11,8 +11,10 @@ import java.util.UUID;
 import java.util.concurrent.CompletableFuture;
 import lombok.RequiredArgsConstructor;
 import org.axonframework.commandhandling.gateway.CommandGateway;
+import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
+@Service
 public class AccountCommandServiceImpl implements AccountCommandService {
     private final CommandGateway commandGateway;
 

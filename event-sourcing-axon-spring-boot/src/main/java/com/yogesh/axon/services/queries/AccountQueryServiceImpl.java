@@ -5,8 +5,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import org.axonframework.eventsourcing.eventstore.EventStore;
+import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
+@Service
 public class AccountQueryServiceImpl implements AccountQueryService {
     private final EventStore eventStore;
 
