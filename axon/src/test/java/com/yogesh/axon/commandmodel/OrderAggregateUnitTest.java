@@ -1,3 +1,4 @@
+/* (C)2020 */
 package com.yogesh.axon.commandmodel;
 
 import com.yogesh.axon.coreapi.commands.ConfirmOrderCommand;
@@ -7,11 +8,10 @@ import com.yogesh.axon.coreapi.events.OrderConfirmedEvent;
 import com.yogesh.axon.coreapi.events.OrderPlacedEvent;
 import com.yogesh.axon.coreapi.events.OrderShippedEvent;
 import com.yogesh.axon.coreapi.exceptions.UnconfirmedOrderException;
+import java.util.UUID;
 import org.axonframework.test.aggregate.AggregateTestFixture;
 import org.axonframework.test.aggregate.FixtureConfiguration;
 import org.junit.*;
-
-import java.util.UUID;
 
 public class OrderAggregateUnitTest {
     private FixtureConfiguration<OrderAggregate> fixture;
@@ -31,7 +31,8 @@ public class OrderAggregateUnitTest {
     }
 
     @Test
-    public void givenOrderPlacedEvent_whenConfirmOrderCommand_thenShouldPublishOrderConfirmedEvent() {
+    public void
+            givenOrderPlacedEvent_whenConfirmOrderCommand_thenShouldPublishOrderConfirmedEvent() {
         String orderId = UUID.randomUUID().toString();
         String product = "Deluxe Chair";
         fixture.given(new OrderPlacedEvent(orderId, product))
@@ -40,7 +41,8 @@ public class OrderAggregateUnitTest {
     }
 
     @Test
-    public void givenOrderPlacedEvent_whenShipOrderCommand_thenShouldThrowUnconfirmedOrderException() {
+    public void
+            givenOrderPlacedEvent_whenShipOrderCommand_thenShouldThrowUnconfirmedOrderException() {
         String orderId = UUID.randomUUID().toString();
         String product = "Deluxe Chair";
         fixture.given(new OrderPlacedEvent(orderId, product))
@@ -49,7 +51,8 @@ public class OrderAggregateUnitTest {
     }
 
     @Test
-    public void givenOrderPlacedEventAndOrderConfirmedEvent_whenShipOrderCommand_thenShouldPublishOrderShippedEvent() {
+    public void
+            givenOrderPlacedEventAndOrderConfirmedEvent_whenShipOrderCommand_thenShouldPublishOrderShippedEvent() {
         String orderId = UUID.randomUUID().toString();
         String product = "Deluxe Chair";
         fixture.given(new OrderPlacedEvent(orderId, product), new OrderConfirmedEvent(orderId))

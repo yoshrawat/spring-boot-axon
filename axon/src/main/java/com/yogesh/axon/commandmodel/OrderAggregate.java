@@ -1,4 +1,7 @@
+/* (C)2020 */
 package com.yogesh.axon.commandmodel;
+
+import static org.axonframework.modelling.command.AggregateLifecycle.apply;
 
 import com.yogesh.axon.coreapi.commands.ConfirmOrderCommand;
 import com.yogesh.axon.coreapi.commands.PlaceOrderCommand;
@@ -13,17 +16,16 @@ import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;
 import org.axonframework.spring.stereotype.Aggregate;
 
-import static org.axonframework.modelling.command.AggregateLifecycle.apply;
-
 @Data
 @Aggregate
 public class OrderAggregate {
-    @AggregateIdentifier
-    private String orderId;
+    @AggregateIdentifier private String orderId;
     private boolean orderConfirmed;
+
     protected OrderAggregate() {
         // Required by Axon to build a default Aggregate prior to Event Sourcing
     }
+
     @CommandHandler
     public OrderAggregate(PlaceOrderCommand command) {
         apply(new OrderPlacedEvent(command.getOrderId(), command.getProduct()));

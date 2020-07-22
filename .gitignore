@@ -32,6 +32,12 @@ out/
 # Maven
 log/*
 target/
+*.class
+*.jar
+*.war
+*.ear
+*.logs
+*.iml
 
 # Gradle
 .gradle/

@@ -1,3 +1,4 @@
+/* (C)2020 */
 package com.yogesh.axon.coreapi.events;
 
 import lombok.AllArgsConstructor;
